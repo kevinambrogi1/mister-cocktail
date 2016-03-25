@@ -1,10 +1,23 @@
-%= simple_form_for(@cocktail) do |f| %>
-<%= f.error_notification %>
+<div class="outer-wrapper">
+  <div class='wrapper'>
+    <div class="container">
+      <div class="sub-wrapper">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">
 
-<%= f.input :name %>
-<%= f.input : %>
-<%= f.input :description %>
+              <%= simple_form_for(@cocktail) do |f| %>
+              <%= f.error_notification %>
 
+              <%= f.input :name, label: 'Your new cocktail name', error: 'Cocktail name is mandatory, please specify one'%>
+              <%= f.input :photo, label: 'Upload picture', error: 'Picture is mandatory, please upload one'%>
+              <%= f.input :photo_cache, as: :hidden %>
 
-<%= f.button :submit %>
-<% end %>
+              <%= f.button :submit %>
+              <% end %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
